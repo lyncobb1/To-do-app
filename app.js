@@ -2,6 +2,10 @@ function onReady () {
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
+  const deleteButton = document.getElementById('deleteButton');
+  // add event listenr for delete button click
+  // // find all checked checkboxes
+  // // remove those from the toDoList
 
    addToDoForm.addEventListener('submit', event => {
      event.preventDefault();
@@ -14,7 +18,16 @@ function onReady () {
      toDoList.appendChild(newLi);
      newToDoText.value = '';
    });
-}
+
+  deleteButton.addEventListener('click', event => {
+     event.preventDefault();
+     const box = document.getElementById("myCheckBox").checked;
+     if(box.checked) {
+       alert('hi!');
+     }
+   });
+
+  }
 
 window.onload = function (){
   onReady();
