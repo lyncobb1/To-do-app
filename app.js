@@ -21,10 +21,12 @@ function onReady () {
 
    deleteButton.addEventListener('click', event => {
      event.preventDefault();
-     const box = document.getElementById("myCheckBox").checked;
-     if(box.checked) {
-       alert('hi!')
-     }
+     const box = document.getElementById('myCheckBox').checked;
+     const text = document.getElementById('newLi');
+     if (box.checked) {
+         box.parentNode.removeChild(myCheckBox);
+         text.parentNode.removeChild(newLi);
+      }
    });
 
   }
