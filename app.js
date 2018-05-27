@@ -7,7 +7,7 @@ function onReady () {
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
-function createNewToDo () {
+function createNewToDo() {
   if(!newToDoText.value) { return; }
 
   toDos.push({
@@ -42,9 +42,9 @@ function renderTheUI() {
   });
 
   function deleteToDo(id) {
-    toDos = toDo.filter(id => toDo.id !== id);
+    let toDos = toDo.filter(id => toDo.id !== id);
+    if(toDo.id !== id) { return; }
   }
-
 
   deleteButton.addEventListener('click', event => {
     event.preventDefault();
