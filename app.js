@@ -35,7 +35,7 @@ function renderTheUI() {
     const newToDo = document.createElement('li');
     const checkbox = document.createElement('input');
     const deleteButton = document.createElement('button');
-    checkbox.type = "checkbox";
+    checkbox.type ="checkbox";
     newToDo.textContent = toDo.title;
     toDoList.appendChild(newToDo);
     newToDo.appendChild(checkbox);
@@ -48,6 +48,17 @@ function renderTheUI() {
 
   deleteButton.addEventListener('click', event => {
     event.preventDefault();
+    const box = document.getElementById('deleteButton').checked == true;
+    for (var i = 0; i < box.length; i++) {
+      if(box.checked) {
+        console.log('hi!')
+      }
+    }
+
+    // Find all items in HTML, where checkbox checked is true
+    // // Loop through those items
+
+    // // // Call deleteToDo with that items id.
     deleteToDo(toDo.id);
     renderTheUI();
   });
